@@ -35,6 +35,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: success()  # Ensures the deployment step runs only if the build step was successful
 
     steps:
     - name: Checkout code
